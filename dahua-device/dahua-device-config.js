@@ -4,6 +4,7 @@ module.exports = function (RED) {
 
         this.ipaddress = config.ipaddress;
         this.port = config.port;
+        this.events = config.events;        
         if (this.credentials) {
             this.username = this.credentials.username;
             this.password = this.credentials.password;
