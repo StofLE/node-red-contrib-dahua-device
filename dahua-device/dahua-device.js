@@ -12,6 +12,7 @@ module.exports = function (RED) {
         var dahua = new ipcamera.dahua({
             host: device.ipaddress,
             port: device.port,
+            events: device.events,            
             user: device.credentials.username,
             pass: device.credentials.password,
             log: false
@@ -33,6 +34,7 @@ module.exports = function (RED) {
             node.send({
                 topic: code + '/' + index + '/' + action,
                 payload: action,
+                datainfo: datainfo,
                 index,
                 code
             });
